@@ -60,4 +60,4 @@ buck-out/
 
 
 #dotenv
-.env
+# .env
