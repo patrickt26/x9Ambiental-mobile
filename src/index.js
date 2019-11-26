@@ -2,9 +2,8 @@ import React from 'react';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { StatusBar } from 'react-native';
+import CodePush from 'react-native-code-push';
 
-// import 'dotenv/config';
-// import config from '~/config/env';
 import './config/ReactotronConfig';
 
 import { store, persistor } from './store';
@@ -12,7 +11,7 @@ import App from './App';
 
 // import Router from './routes';
 
-export default function Index() {
+function Index() {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
@@ -22,3 +21,7 @@ export default function Index() {
     </Provider>
   );
 }
+
+export default CodePush({
+  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
+})(Index);
