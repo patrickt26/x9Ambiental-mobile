@@ -50,9 +50,7 @@ function SelectLocation({ navigation }) {
         setCoordinates(coords);
         setLoading(false);
       },
-      error => {
-        console.tron.log(error);
-      },
+      error => {},
       { enableHighAccuracy: true, maximumAge: 10000, timeout: 10000 }
     );
   }, []);

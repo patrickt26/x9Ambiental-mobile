@@ -43,7 +43,7 @@ function Map({ isFocused, navigation }) {
         setLoading(false);
       },
       error => {
-        console.tron.log(error);
+        // console.tron.log(error);
       },
       { enableHighAccuracy: true, maximumAge: 10000, timeout: 10000 }
     );
@@ -53,7 +53,7 @@ function Map({ isFocused, navigation }) {
         setCoordinates(coords);
       },
       error => {
-        console.tron.log(error);
+        // console.tron.log(error);
       },
       {
         enableHighAccuracy: true,

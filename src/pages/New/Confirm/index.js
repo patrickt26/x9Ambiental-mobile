@@ -40,9 +40,7 @@ export default function Confirm({ navigation }) {
         setAddress(res.results[0].formatted_address);
         setLoading(false);
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(err => {});
   }, [newCoordinates]);
 
   async function handleAddReport() {
