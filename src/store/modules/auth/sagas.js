@@ -19,8 +19,6 @@ export function* signIn({ payload }) {
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
     yield put(signInSucess(token, user));
-
-    // history.push('/dashboard');
   } catch (err) {
     Alert.alert(
       'Falha na autenticação',
@@ -41,9 +39,7 @@ export function* signUp({ payload }) {
     });
 
     Alert.alert('Concluído', 'Conta criada com sucesso');
-
-    // history.push('/');
-  } catch {
+  } catch (err) {
     Alert.alert(
       'Falha no cadastro',
       'Houve um erro no cadastro, verifique seus dados'
@@ -62,9 +58,7 @@ export function setToken({ payload }) {
   }
 }
 
-export function signOut() {
-  // history.push('/');
-}
+export function signOut() {}
 
 export default all([
   takeLatest('persist/REHYDRATE', setToken),
