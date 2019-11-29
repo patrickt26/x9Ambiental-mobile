@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Background from '~/components/Background';
@@ -25,7 +26,14 @@ export default function SignIn({ navigation }) {
   const loading = useSelector(state => state.auth.loading);
 
   function handleSubmit() {
-    dispatch(signUpRequest(name, email, password));
+    if (password.length < 6) {
+      Alert.alert(
+        'Falha no cadastro',
+        'A senha deve conter no mínimo 6 caracteres'
+      );
+    } else {
+      dispatch(signUpRequest(name, email, password));
+    }
   }
 
   return (
